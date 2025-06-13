@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách Động vật Quý hiếm</title>
+    <link rel="stylesheet" href="../Css/style.css">
+    <style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f1fdf6;
+    color: #333;
+    background: linear-gradient(to bottom, #d0f0e0, #f1fdf6);
+
+    }
+
+    h1 {
+      font-size: 4.2em;
+      color: #2e7d32;
+      margin-bottom: 60px;
+      font-weight: 800;
+      text-align: center;
+    }
+
+    .animal-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    gap: 20px;
+
+    }
+
+    .animal-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    width: calc((100% - 80px) / 5); /* 5 cards per row, considering 4 gaps of 20px */
+    max-width: 500px; /* Optional, to avoid growing too big on large screens */
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+
+    .animal-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+
+    .animal-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    }
+
+    .animal-card h3 {
+    margin: 10px;
+    font-size: 20px;
+    }
+
+    .animal-card p {
+    margin: 0 10px;
+    color: #666;
+    font-style: italic;
+    }
+
+    .status {
+    display: inline-block;
+    margin: 10px;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 14px;
+    color: white;
+    }
+
+    .status.critical {
+    background-color: #d9534f;
+    }
+
+    .status.endangered {
+    background-color: #f0ad4e;
+    }
+    </style>
+</head>
+<body >
+  <h1>Danh sách Động vật Quý hiếm</h1>
+
+  <section class="animal-list slide-down">
+    <div class="animal-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/0f/Grosser_Panda.JPG" alt="Gấu trúc">
+      <h3>Gấu trúc khổng lồ</h3>
+      <p><em>Ailuropoda melanoleuca</em></p>
+      <span class="status critical">Nguy cấp</span>
+    </div>
+
+    <div class="animal-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/56/Tiger.50.jpg" alt="Hổ Đông Dương">
+      <h3>Hổ Đông Dương</h3>
+      <p><em>Panthera tigris corbetti</em></p>
+      <span class="status critical">Nguy cấp</span>
+    </div>
+
+    <div class="animal-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Hylobates_lar_pair_of_white_and_black_01.jpg/480px-Hylobates_lar_pair_of_white_and_black_01.jpg" alt="Vượn tay trắng">
+      <h3>Vượn tay Trắng</h3>
+      <p><em>Hylobates lar</em></p>
+      <span class="status critical">Nguy cấp</span>
+    </div>
+
+    <div class="animal-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/RhinopitecusBieti.jpg/480px-RhinopitecusBieti.jpg" alt="Vọoc mũi hếch đen">
+      <h3>Vọoc mũi hếch đen</h3>
+      <p><em>Rhinopithecus bieti</em></p>
+      <span class="status critical">Nguy cấp</span>
+    </div>
+
+    <div class="animal-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Macaca_arctoides.png/480px-Macaca_arctoides.png" alt="Khỉ cộc">
+      <h3>Khỉ cộc</h3>
+      <p><em>Macaca arctoides</em></p>
+      <span class="status critical">Nguy cấp</span>
+    </div>
+
+    <div class="animal-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/RedPandaFullBody.JPG/480px-RedPandaFullBody.JPG" alt="Gấu trúc">
+      <h3>Gấu trúc đỏ</h3>
+      <p><em>Ailurus fulgens</em></p>
+      <span class="status critical">Nguy cấp</span>
+    </div>
+
+    <div class="animal-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Dhole_in_its_habitat_%28cropped%29.jpg/480px-Dhole_in_its_habitat_%28cropped%29.jpg" alt="Gấu trúc">
+      <h3>Xói đỏ</h3>
+      <p><em>Cuon alpinus</em></p>
+      <span class="status critical">Nguy cấp</span>
+    </div>
+
+    <div class="animal-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Zoo_du_jardin_des_plantes%2C_Paris_mai_2014_%2822%29.jpg/480px-Zoo_du_jardin_des_plantes%2C_Paris_mai_2014_%2822%29.jpg" alt="Gấu trúc">
+      <h3>Báo hoa bắc</h3>
+      <p><em>Panthera pardus orientalis</em></p>
+      <span class="status critical">Nguy cấp</span>
+    </div>
+
+    <div class="animal-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Prionodon_pardicolor_-_Kunming_Natural_History_Museum_of_Zoology_-_DSC02486.JPG/480px-Prionodon_pardicolor_-_Kunming_Natural_History_Museum_of_Zoology_-_DSC02486.JPG" alt="Gấu trúc">
+      <h3>Cầy gấm</h3>
+      <p><em>Ailuropoda melanoleuca</em></p>
+      <span class="status critical">Nguy cấp</span>
+    </div>
+
+    <div class="animal-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Bundesarchiv_Bild_135-S-06-24-35%2C_Tibetexpedition%2C_Erlegter_Blauschafwidder.jpg/480px-Bundesarchiv_Bild_135-S-06-24-35%2C_Tibetexpedition%2C_Erlegter_Blauschafwidder.jpg" alt="Gấu trúc">
+      <h3>Cừu lam lùn</h3>
+      <p><em>Pseudois shaeferi</em></p>
+      <span class="status critical">Nguy cấp</span>
+    </div>
+
+    <div class="animal-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Tibetan_Gazelle_or_Goa_Antelope_from_North_Sikkim_India_16.10.2019.jpg/269px-Tibetan_Gazelle_or_Goa_Antelope_from_North_Sikkim_India_16.10.2019.jpg" alt="Gấu trúc">
+      <h3>Linh dương Goa</h3>
+      <p><em>Procapra picticaudata</em></p>
+      <span class="status critical">Nguy cấp</span>
+    </div>
+
+    <div class="animal-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Serow_Capricornis_sumatraensis.JPG/480px-Serow_Capricornis_sumatraensis.JPG" alt="Gấu trúc">
+      <h3>Sơn dương đại lục</h3>
+      <p><em>Capricornis sumatraensis</em></p>
+      <span class="status critical">Nguy cấp</span>
+    </div>
+
+    <div class="animal-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Naemorhedus_goral_1.jpg/480px-Naemorhedus_goral_1.jpg" alt="Gấu trúc">
+      <h3>Ban linh Himalaya</h3>
+      <p><em>Naemorhedus goral</em></p>
+      <span class="status critical">Nguy cấp</span>
+    </div>
+
+    <div class="animal-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Red_deer_stag_2009_denmark.jpg/319px-Red_deer_stag_2009_denmark.jpg" alt="Gấu trúc">
+      <h3>Hươu đỏ</h3>
+      <p><em>Cervus elaphus</em></p>
+      <span class="status critical">Nguy cấp</span>
+    </div>
+
+    <div class="animal-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Tragulus_javanicus_jerusalem_zoo.jpg/480px-Tragulus_javanicus_jerusalem_zoo.jpg" alt="Gấu trúc">
+      <h3>Cheo cheo Java</h3>
+      <p><em>Tragulus javanicus</em></p>
+      <span class="status critical">Nguy cấp</span>
+    </div>
+
+    <div class="animal-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Pangolin%27s_tail.jpg/307px-Pangolin%27s_tail.jpg" alt="Gấu trúc">
+      <h3>Tê tê vàng</h3>
+      <p><em>Manis pentadactyla</em></p>
+      <span class="status critical">Nguy cấp</span>
+    </div>
+
+    <div class="animal-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Beaver_pho34.jpg/480px-Beaver_pho34.jpg" alt="Gấu trúc">
+      <h3>Hải ly Châu Âu</h3>
+      <p><em>Castor fiber</em></p>
+      <span class="status critical">Nguy cấp</span>
+    </div>
+
+    <div class="animal-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Mother_and_baby_sperm_whale.jpg/480px-Mother_and_baby_sperm_whale.jpg" alt="Gấu trúc">
+      <h3>Cá nhà táng</h3>
+      <p><em> Physeter macrocephalus</em></p>
+      <span class="status critical">Nguy cấp</span>
+    </div>
+
+    <div class="animal-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Blood_Pheasant_Phrumsingla_National_Park_Bhutan.jpg/480px-Blood_Pheasant_Phrumsingla_National_Park_Bhutan.jpg" alt="Gấu trúc">
+      <h3>Trĩ huyết</h3>
+      <p><em>Ithaginis cruentus</em></p>
+      <span class="status critical">Nguy cấp</span>
+    </div>
+
+    <div class="animal-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/G%C3%A0_l%C3%B4i_tr%E1%BA%AFng_1.JPG/480px-G%C3%A0_l%C3%B4i_tr%E1%BA%AFng_1.JPG" alt="Gấu trúc">
+      <h3>Gà lôi trắng</h3>
+      <p><em>Lophura nycthemera</em></p>
+      <span class="status critical">Nguy cấp</span>
+    </div>
+
+  </section>
+  <script src="../html/script.js"></script>
+
+</body>
+</html>

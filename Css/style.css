@@ -1,0 +1,339 @@
+:root {
+  --main-color:  #ffffff;
+  --text-color: #000000;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #f1fdf6;
+  color: #333;
+  background: linear-gradient(to bottom, #d0f0e0, #f1fdf6);
+
+}
+.main-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--main-color);
+  padding: 10px 20px;
+  flex-wrap: wrap;
+  height: 100px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #07ed50;
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.main-nav {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  background-color: var(--main-color);
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: var(--text-color);
+  transition: color 0.3s;
+  font-size: 200%;
+  padding-right: 30px;;
+}
+
+.main-nav a:hover {
+  color:#07ed50;
+}
+
+.user-section {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  font-size: 200%;
+}
+
+.user-section a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.user-section a:hover {
+  color: #07ed50;
+}
+/*Đây là Css cho nội dung chính của các thẻ div*/
+.container {
+  background-color: var(--main-color);
+}
+
+.maina img {
+  width:100%;
+  height: 100%;
+  display:block;
+}
+
+.mainb {
+  border-radius: 30px;
+  margin-top: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+  background-color: #ffffff;
+}
+
+.mainc {
+  display:flex;
+  border-radius: 30px;
+  margin-top: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+  background-color: #ffffff;
+}
+
+.container .mainc .right {
+  width: auto;
+}
+
+.container .mainc .left {
+  width: 70%;
+  text-align:center;
+  color: var(--text-color);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.container .mainc .left .tieude1 {
+  font-size: 300%;
+  color: var(--text-color);
+  padding: 50px;
+}
+
+.container .mainc .left .noidung1 {
+  font-size: 200%;
+  color: var(--text-color)
+}
+
+.maind {
+  border-radius: 30px;
+  margin-top: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+  background-color: #ffffff;
+}
+
+.tieude {
+  font-size: 300%;
+  text-align: center;
+  color:var(--text-color);
+  padding: 70px;
+}
+
+.noidung {
+  font-size: 200%;
+  text-align: left;
+  color:var(--text-color);
+  padding: 30px;
+  justify-content: center;
+  text-align: center;
+}
+
+.anh {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.anh1 {
+  flex: 1;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.anh1:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.anh1 img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+@media (max-width: 900px) {
+  .anh {
+    flex-direction: column;
+  }
+
+  .anh1 {
+    width: 100%;
+  }
+}
+
+.maine {
+  border-radius: 30px;
+  margin-top: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+  background-color: #ffffff;
+}
+/*Kết thúc Css cho nội dung chính của các thẻ div*/
+
+/*Đây là Css Cho Footer*/
+.footer {
+  background-color: #3ba081;
+  color: white;
+  padding: 40px 20px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-section {
+  flex: 1 1 250px;
+  margin: 20px;
+}
+
+.footer h3 {
+  color: #f1c40f;
+  margin-bottom: 15px;
+}
+
+.footer p, .footer a {
+  color: #ecf0f1;
+  text-decoration: none;
+  line-height: 1.6;
+}
+
+.footer a:hover {
+  color: #f39c12;
+}
+
+.social-icons a {
+  color: white;
+  margin-right: 15px;
+  font-size: 1.4rem;
+}
+
+.social-icons a:hover {
+  color: #f1c40f;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  border-top: 1px solid #7f8c8d;
+  padding-top: 15px;
+  font-size: 0.9rem;
+  color: #bdc3c7;
+}
+
+.page {
+  padding: 40px;
+  max-width: 900px;
+  margin: auto;
+  background: #ffffff;
+  border-radius: 15px;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.responsive-img {
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+/*kết thúc Css cho Footer*/
+
+/*Hiệu ứng cho các thẻ div trang chủ*/
+.fade-in {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease-out;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.slide-in-left {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: all 1s ease;
+}
+
+.slide-in-left.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.slide-in-right {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: all 1s ease;
+}
+
+.slide-in-right.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.flip-up {
+  opacity: 0;
+  transform: rotateX(90deg);
+  transform-origin: bottom;
+  transition: all 0.8s ease-out;
+  perspective: 1000px;
+}
+
+.flip-up.show {
+  opacity: 1;
+  transform: rotateX(0);
+}
+
+.slide-down {
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: all 0.8s ease-out;
+}
+
+.slide-down.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+/*Kết thúc hiệu ứng trang chủ*/
+
+/*Đây là Css cho Nguyên nhân và mối đe doạ*/
+
+/*Kết thúc Css cho Nguyên nhân và mối đe doạ*/
+
+/*Đây là Css cho Cách bảo vệ*/
+
+/*Kết thúc Css cho Cách bảo vệ*/
+
+/*Đây là Css cho Liên hệ */
+
+/* Kết thúc Css cho liên hệ*/

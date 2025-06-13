@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nguyên nhân & Mối đe dọa</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f1fdf6;
+    color: #333;
+    background: linear-gradient(to bottom, #d0f0e0, #f1fdf6);
+
+    }
+
+    .section-wrapper {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 80px 8vw;
+      background: linear-gradient(to bottom, #d0f0e0, #f1fdf6);
+    }
+
+    h1 {
+      font-size: 4.2em;
+      color: #2e7d32;
+      margin-bottom: 60px;
+      font-weight: 800;
+      text-align: center;
+    }
+
+    .threats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));
+      gap: 60px;
+    }
+
+    .threat-card {
+      background-color: #ffffff;
+      border-radius: 24px;
+      box-shadow: 0 16px 28px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .threat-card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+
+    .threat-card img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+
+    .threat-card-content {
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .threat-card h2 {
+      font-size: 2em;
+      color: #1b5e20;
+      margin-bottom: 20px;
+    }
+
+    .threat-card p {
+      font-size: 1.15em;
+      color: #444;
+      flex-grow: 1;
+    }
+
+    .threat-card .action {
+      margin-top: 25px;
+      font-weight: 600;
+      color: #2e7d32;
+      font-size: 1.05em;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.8em;
+      }
+
+      .threat-card h2 {
+        font-size: 1.6em;
+      }
+
+      .threat-card p {
+        font-size: 1em;
+      }
+
+      .threat-card img {
+        height: 220px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="section-wrapper">
+    <h1>Nguyên nhân và Mối đe dọa</h1>
+    <div class="threats-grid">
+      <div class="threat-card">
+        <img src="../img/mat-moi-truong-song.jpg" alt="Mất môi trường sống" />
+        <div class="threat-card-content">
+          <h2>Mất môi trường sống</h2>
+          <p>Rừng bị chặt phá để làm nông nghiệp, xây dựng và phát triển đô thị khiến nhiều loài động vật không còn nơi sinh sống. Việc mất môi trường sống buộc chúng phải di chuyển hoặc đối mặt với nguy cơ tuyệt chủng do không thể thích nghi kịp thời.</p>
+          <div class="action">📌 Hành động: Trồng lại rừng, bảo vệ rừng tự nhiên.</div>
+        </div>
+      </div>
+
+      <div class="threat-card">
+        <img src="../img/san-bat-trai-phep.jpg" alt="Săn bắt trái phép" />
+        <div class="threat-card-content">
+          <h2>Săn bắt trái phép</h2>
+          <p>Nhiều loài quý hiếm bị săn để lấy lông, da, ngà, sừng hoặc bán làm thú nuôi. Điều này khiến số lượng cá thể giảm mạnh, làm mất cân bằng sinh thái và gây ra nhiều hệ lụy trong chuỗi thức ăn tự nhiên.</p>
+          <div class="action">📌 Hành động: Cấm buôn bán động vật hoang dã, tăng cường kiểm soát biên giới.</div>
+        </div>
+      </div>
+
+      <div class="threat-card">
+        <img src="../img/o-nhiem-moi-truong.jpg" alt="Ô nhiễm môi trường" />
+        <div class="threat-card-content">
+          <h2>Ô nhiễm môi trường</h2>
+          <p>Nước thải công nghiệp, rác nhựa và hóa chất độc hại đang làm suy giảm nghiêm trọng chất lượng sống của nhiều loài. Sinh vật biển như rùa, cá voi, chim biển dễ bị chết do ăn nhầm nhựa hoặc mắc kẹt trong rác thải.</p>
+          <div class="action">📌 Hành động: Giảm sử dụng nhựa, xử lý rác đúng cách.</div>
+        </div>
+      </div>
+
+      <div class="threat-card">
+        <img src="../img/bien-doi-khi-hau.jpg" alt="Biến đổi khí hậu" />
+        <div class="threat-card-content">
+          <h2>Biến đổi khí hậu</h2>
+          <p>Nhiệt độ toàn cầu tăng khiến băng tan, cháy rừng, hạn hán và bão lũ xuất hiện thường xuyên. Điều này phá vỡ môi trường sống vốn ổn định của các loài, đặc biệt là loài ở vùng cực như gấu trắng, chim cánh cụt, và san hô.</p>
+          <div class="action">📌 Hành động: Giảm khí thải carbon, sử dụng năng lượng tái tạo.</div>
+        </div>
+      </div>
+
+      <div class="threat-card">
+        <img src="../img/loai-xam-lan.jpg" alt="Loài xâm lấn" />
+        <div class="threat-card-content">
+          <h2>Loài xâm lấn</h2>
+          <p>Việc đưa sinh vật từ nơi này sang nơi khác khiến chúng lấn át các loài bản địa, làm thay đổi cân bằng sinh thái. Nhiều loài bản địa bị tuyệt chủng do không cạnh tranh nổi với các loài ngoại lai.</p>
+          <div class="action">📌 Hành động: Kiểm soát nhập khẩu sinh vật, giáo dục cộng đồng.</div>
+        </div>
+      </div>
+
+      <div class="threat-card">
+        <img src="../img/da-dang-sinh-hoc.jpg" alt="Suy giảm đa dạng sinh học" />
+        <div class="threat-card-content">
+          <h2>Suy giảm đa dạng sinh học</h2>
+          <p>Khi các loài bị mất đi, toàn bộ hệ sinh thái mất cân bằng. Điều này không chỉ ảnh hưởng đến động vật mà còn tác động đến cuộc sống con người, từ nông nghiệp đến nguồn nước và khí hậu.</p>
+          <div class="action">📌 Hành động: Hỗ trợ khu bảo tồn, không tiêu thụ sản phẩm động vật quý hiếm.</div>
+        </div>
+      </div>
+
+      <div class="threat-card">
+        <img src="../img/o-nhiem-nhua.jpg" alt="Ô nhiễm nhựa đại dương" />
+        <div class="threat-card-content">
+          <h2>Ô nhiễm nhựa trong đại dương</h2>
+          <p>Nhựa đại dương giết chết hàng triệu sinh vật biển mỗi năm — từ rùa bị mắc kẹt đến cá voi nuốt phải rác. Nhựa dưới dạng vi mảnh xâm nhập chuỗi thức ăn, dẫn đến sự suy giảm sức khỏe tổng thể của hệ sinh thái biển.</p>
+          <div class="action">📌 Hành động: Bãi biển không rác, giảm nhựa dùng một lần.</div>
+        </div>
+      </div>
+
+      <div class="threat-card">
+        <img src="../img/han-han.jpg" alt="Suy thoái nguồn nước" />
+        <div class="threat-card-content">
+          <h2>Suy thoái nguồn nước & Hạn hán</h2>
+          <p>Thiếu nước ngọt ảnh hưởng trực tiếp tới loài phụ thuộc nước như voi, tê giác, và chim thủy sinh. Hạn hán kéo dài làm khô vùng sinh sống, ép động vật phải di cư, dễ bị tấn công và căng thẳng sinh học.</p>
+          <div class="action">📌 Hành động: Quản lý nước bền vững, bảo vệ hồ, sông, suối.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
