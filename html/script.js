@@ -20,20 +20,20 @@ document.addEventListener("DOMContentLoaded", () => {
   const links = document.querySelectorAll("nav a");
   const main = document.getElementById("mains-content");
 
-  // Ghi lại nội dung ban đầu (trang chủ)
+  // Lưu lại nội dung mặc định ban đầu
   const homeContent = main.innerHTML;
 
   links.forEach(link => {
     link.addEventListener("click", async (e) => {
-      e.preventDefault();
       const page = link.getAttribute("data-page");
 
-      // Nếu là trang chủ
-      if (!page || page === "index.html") {
-        main.innerHTML = homeContent;
-        window.history.pushState({}, "", "");
-        return;
+      // Nếu là Trang Chủ → load lại toàn bộ trang
+      if (page === "index.html" || !page) {
+        return; // KHÔNG preventDefault → để load lại toàn trang
       }
+
+      // Các trang khác → prevent reload và tải động
+      e.preventDefault();
 
       try {
         const res = await fetch(page);
@@ -47,27 +47,22 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Xử lý nút back/forward trình duyệt
+  // Quản lý khi bấm nút back/forward
   window.addEventListener("popstate", () => {
     const hashPage = window.location.hash.replace("#", "");
-
-    // Nếu là về trang chủ
-    if (!hashPage == "index.html") {
-      main.innerHTML = homeContent;
-      return;
+    if (!hashPage || hashPage === "index.html") {
+      location.reload(); // Reload lại trang nếu quay về Trang Chủ
+    } else {
+      fetch(hashPage)
+        .then(res => res.text())
+        .then(html => main.innerHTML = html)
+        .catch(() => {
+          main.innerHTML = "<p>Không thể tải nội dung. Vui lòng thử lại.</p>";
+        });
     }
-
-    fetch(hashPage)
-      .then(res => {
-        if (!res.ok) throw new Error();
-        return res.text();
-      })
-      .then(html => main.innerHTML = html)
-      .catch(() => {
-        main.innerHTML = "<p>Không thể tải nội dung. Vui lòng thử lại.</p>";
-      });
   });
 });
+
 
 
 
