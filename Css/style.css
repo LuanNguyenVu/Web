@@ -194,76 +194,116 @@ body {
 /*Kết thúc Css cho nội dung chính của các thẻ div*/
 
 /*Đây là Css Cho Footer*/
+/* Footer tổng thể */
 .footer {
-  background-color: #3ba081;
-  color: white;
-  padding: 40px 20px;
+  background: linear-gradient(135deg, #2f8f6e, #3ba081);
+  color: #fff;
+  padding: 50px 20px 30px;
+  font-family: 'Montserrat', sans-serif;
 }
 
+/* Container của footer chia đều các khối */
 .footer-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   max-width: 1200px;
   margin: auto;
+  gap: 30px;
 }
 
+/* Mỗi cột trong footer */
 .footer-section {
   flex: 1 1 250px;
-  margin: 20px;
+  min-width: 220px;
 }
 
 .footer h3 {
   color: #f1c40f;
+  font-size: 1.2rem;
   margin-bottom: 15px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 5px;
 }
 
-.footer p, .footer a {
+.footer p,
+.footer a {
   color: #ecf0f1;
-  text-decoration: none;
+  font-size: 0.95rem;
   line-height: 1.6;
+  text-decoration: none;
+  transition: color 0.3s;
 }
 
 .footer a:hover {
   color: #f39c12;
 }
 
+/* Social icon hover & layout */
+.social-icons {
+  margin-top: 10px;
+}
+
 .social-icons a {
   color: white;
   margin-right: 15px;
   font-size: 1.4rem;
+  transition: color 0.3s ease;
 }
 
 .social-icons a:hover {
   color: #f1c40f;
 }
 
+/* Dòng cuối cùng */
 .footer-bottom {
   text-align: center;
-  margin-top: 30px;
-  border-top: 1px solid #7f8c8d;
+  margin-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
   padding-top: 15px;
-  font-size: 0.9rem;
-  color: #bdc3c7;
+  font-size: 0.85rem;
+  color: #dbe9e8;
 }
 
+/* Nội dung chính */
 .page {
-  padding: 40px;
-  max-width: 900px;
-  margin: auto;
+  padding: 50px 30px;
+  max-width: 950px;
+  margin: 40px auto;
   background: #ffffff;
-  border-radius: 15px;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
   color: #333;
-  font-size: 1.5rem;
+  font-size: 1.15rem;
+  line-height: 1.8;
 }
 
+/* Ảnh responsive */
 .responsive-img {
   width: 100%;
   max-height: 500px;
   object-fit: cover;
-  border-radius: 10px;
-  margin-top: 20px;
+  border-radius: 15px;
+  margin-top: 25px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
+
+/* Responsive cho footer */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-section {
+    margin-bottom: 30px;
+  }
+
+  .page {
+    padding: 30px 20px;
+  }
+}
+
 /*kết thúc Css cho Footer*/
 
 /*Hiệu ứng cho các thẻ div trang chủ*/
