@@ -488,65 +488,110 @@ body {
 /*Kết thúc Css cho Nguyên nhân và mối đe doạ*/
 
 /*Đây là Css cho Cách bảo vệ*/
-    .page {
-      width: 100%;
-      padding: 80px 6vw;
-      display: flex;
-      flex-direction: column;
-      gap: 100px;
-      background: linear-gradient(to bottom, #d0f0e0, #f1fdf6);
+.page {
+  max-width: 2700px;
+  margin: 0 auto;
+  background: linear-gradient(to bottom, #d0f0e0, #f1fdf6);
 
-    }
+}
 
-    .page h1 {
-      font-size: 4.2em;
-      color: #2e7d32;
-      margin-bottom: 60px;
-      font-weight: 800;
-      text-align: center;
-    }
+.page h1 {
+  font-size: 3.2em;
+  color: #2e7d32;
+  margin-bottom: 60px;
+  font-weight: 800;
+  text-align: center;
+}
 
-    .protect-block {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 60px;
-      background-color: #ffffff;
-      padding: 50px;
-      border-radius: 24px;
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
-    }
+/* Common block styling */
+.protect-block {
+  display: flex;
+  background: #fff;
+  margin-bottom: 30px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
+}
 
-    .protect-block:nth-child(even) {
-      flex-direction: row-reverse;
-    }
+.protect-img {
+  flex: 1 1 300px;
+  min-width: 300px;
+  max-height: 300px;
+  overflow: hidden;
+}
 
-    .protect-text {
-      flex: 1;
-    }
+.protect-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-    .protect-text h2 {
-      font-size: 2.4em;
-      color: #27ae60;
-      margin-bottom: 20px;
-    }
+.protect-text {
+  flex: 2 1 400px;
+  padding: 20px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
-    .protect-text p {
-      font-size: 1.3em;
-      color: #444;
-      line-height: 1.8;
-    }
+.protect-text h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
 
-    .protect-img {
-      flex: 1;
-    }
+.protect-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
 
-    .protect-img img {
-      width: 100%;
-      max-height: 400px;
-      object-fit: cover;
-      border-radius: 20px;
-    }
+/* Alternate layout: ảnh phải chữ trái */
+.protect-block:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .protect-block {
+    flex-direction: column !important;
+  }
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  .protect-text {
+    padding: 20px;
+  }
+
+  .protect-text h2 {
+    font-size: 1.3rem;
+  }
+
+  .protect-text p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 15px;
+  }
+
+  .page h1 {
+    font-size: 1.8rem;
+  }
+
+  .protect-text h2 {
+    font-size: 1.2rem;
+  }
+
+  .protect-text p {
+    font-size: 0.9rem;
+  }
+}
 /*Kết thúc Css cho Cách bảo vệ*/
 
 /*Đây là Css cho Liên hệ */
