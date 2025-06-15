@@ -46,6 +46,7 @@ body {
   transition: color 0.3s;
   font-size: 200%;
   padding-right: 30px;;
+  color: #000000;
 }
 
 .main-nav a:hover {

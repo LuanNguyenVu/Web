@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đăng nhập / Đăng ký</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Montserrat', sans-serif; }
+    body { background-color: #f0f4f8; display: flex; justify-content: center; align-items: center; height: 100vh; overflow: hidden; transition: background-color 0.4s ease; }
+
+    .auth-container {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      width: 400px;
+      max-width: 90%;
+      padding: 40px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.6s ease-in-out;
+    }
+
+    h2 { text-align: center; margin-bottom: 20px; color: #2c3e50; }
+
+    form { display: flex; flex-direction: column; gap: 15px; }
+
+    input {
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      outline: none;
+      transition: border 0.3s;
+    }
+
+    input:focus { border-color: #3ba081; }
+
+    button {
+      background: #3ba081;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover { background: #31906f; }
+
+    .toggle-form {
+      text-align: center;
+      margin-top: 20px;
+      cursor: pointer;
+      color: #3ba081;
+      transition: color 0.3s;
+    }
+
+    .toggle-form:hover { color: #1e6b54; }
+
+    #back-btn {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: none;
+      border: none;
+      font-size: 1.2rem;
+      cursor: pointer;
+      color: #999;
+    }
+
+    .fade {
+      animation: fadeIn 0.6s ease-in-out forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <div class="auth-container fade" id="auth-box">
+    <button id="back-btn" title="Quay lại">&larr;</button>
+    <h2 id="form-title">Đăng Nhập</h2>
+    <form id="auth-form">
+      <input type="email" placeholder="Email" required>
+      <input type="password" placeholder="Mật khẩu" required>
+      <button type="submit">Đăng Nhập</button>
+    </form>
+    <div class="toggle-form" id="switch">Chưa có tài khoản? <b>Đăng ký ngay</b></div>
+  </div>
+
+  <script>
+    const formTitle = document.getElementById("form-title");
+    const authForm = document.getElementById("auth-form");
+    const switchBtn = document.getElementById("switch");
+    const backBtn = document.getElementById("back-btn");
+
+    let isLogin = true;
+
+    switchBtn.addEventListener("click", () => {
+      isLogin = !isLogin;
+      formTitle.textContent = isLogin ? "Đăng Nhập" : "Đăng Ký";
+      authForm.innerHTML = isLogin
+        ? `<input type="email" placeholder="Email" required>
+           <input type="password" placeholder="Mật khẩu" required>
+           <button type="submit">Đăng Nhập</button>`
+        : `<input type="text" placeholder="Họ và tên" required>
+           <input type="email" placeholder="Email" required>
+           <input type="password" placeholder="Mật khẩu" required>
+           <button type="submit">Đăng Ký</button>`;
+      switchBtn.innerHTML = isLogin
+        ? `Chưa có tài khoản? <b>Đăng ký ngay</b>`
+        : `Đã có tài khoản? <b>Đăng nhập</b>`;
+    });
+
+    backBtn.addEventListener("click", () => {
+      window.location.href = "index.html"; // Quay lại trang chính
+    });
+  </script>
+</body>
+</html>
