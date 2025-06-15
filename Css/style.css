@@ -450,13 +450,13 @@ body {
     }
 
     .threat-card h2 {
-      font-size: 2em;
+      font-size: 200%;
       color: #1b5e20;
       margin-bottom: 20px;
     }
 
     .threat-card p {
-      font-size: 1.15em;
+      font-size: 100%;
       color: #444;
       flex-grow: 1;
     }
@@ -492,7 +492,7 @@ body {
   max-width: 2700px;
   margin: 0 auto;
   background: linear-gradient(to bottom, #d0f0e0, #f1fdf6);
-
+  
 }
 
 .page h1 {
@@ -536,13 +536,13 @@ body {
 }
 
 .protect-text h2 {
-  font-size: 2rem;
+  font-size: 200%;
   font-weight: 600;
   margin-bottom: 15px;
 }
 
 .protect-text p {
-  font-size: 1rem;
+  font-size: 100%;
   line-height: 1.6;
 }
 
@@ -596,14 +596,12 @@ body {
 
 /*Đây là Css cho Liên hệ */
     .pages {
-        max-width: 800px;
-        margin: 40px auto;
-        background-color: #fff;
-        padding: 40px;
-        border-radius: 16px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        background: linear-gradient(to bottom, #d0f0e0, #f1fdf6);
-
+      max-width: 800px;
+      margin: 40px auto;
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     }
 
     .pages h1, h2 {
@@ -613,7 +611,7 @@ body {
 
     p {
         text-align: center;
-        font-size: 1.1rem;
+        font-size: 200%;
         color: #555;
     }
 

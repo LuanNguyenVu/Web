@@ -20,10 +20,21 @@ document.addEventListener("DOMContentLoaded", () => {
   const links = document.querySelectorAll("nav a");
   const main = document.getElementById("mains-content");
 
+  // Ghi lại nội dung ban đầu (trang chủ)
+  const homeContent = main.innerHTML;
+
   links.forEach(link => {
     link.addEventListener("click", async (e) => {
       e.preventDefault();
       const page = link.getAttribute("data-page");
+
+      // Nếu là trang chủ
+      if (!page || page === "index.html") {
+        main.innerHTML = homeContent;
+        window.history.pushState({}, "", "");
+        return;
+      }
+
       try {
         const res = await fetch(page);
         if (!res.ok) throw new Error("Không thể tải trang.");
@@ -36,14 +47,27 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Xử lý nút quay lại/lịch sử
+  // Xử lý nút back/forward trình duyệt
   window.addEventListener("popstate", () => {
     const hashPage = window.location.hash.replace("#", "");
-    if (hashPage) {
-      fetch(`pages/${hashPage}`)
-        .then(res => res.text())
-        .then(html => main.innerHTML = html);
+
+    // Nếu là về trang chủ
+    if (!hashPage == "index.html") {
+      main.innerHTML = homeContent;
+      return;
     }
+
+    fetch(hashPage)
+      .then(res => {
+        if (!res.ok) throw new Error();
+        return res.text();
+      })
+      .then(html => main.innerHTML = html)
+      .catch(() => {
+        main.innerHTML = "<p>Không thể tải nội dung. Vui lòng thử lại.</p>";
+      });
   });
 });
+
+
 
