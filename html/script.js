@@ -1,30 +1,3 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const navLinks = document.querySelectorAll('a[data-page]');
-  navLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
-      const page = link.getAttribute('data-page');
-      loadPage(page);
-    });
-  });
-
-  // Mặc định load trang chủ
-  loadPage('home.html');
-});
-
-function loadPage(page) {
-  fetch(page)
-    .then(res => res.text())
-    .then(data => {
-      document.getElementById('content').innerHTML = data;
-      window.scrollTo(0, 0);
-    })
-    .catch(err => {
-      document.getElementById('content').innerHTML = "<p>Không thể tải trang.</p>";
-      console.error("Lỗi tải trang: ", err);
-    });
-}
-
 document.addEventListener("DOMContentLoaded", function () {
   const fadeEls = document.querySelectorAll(".fade-in, .slide-in-left, .slide-in-right, .flip-up, .slide-down");
 
@@ -41,5 +14,36 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   fadeEls.forEach((el) => observer.observe(el));
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const links = document.querySelectorAll("nav a");
+  const main = document.getElementById("mains-content");
+
+  links.forEach(link => {
+    link.addEventListener("click", async (e) => {
+      e.preventDefault();
+      const page = link.getAttribute("data-page");
+      try {
+        const res = await fetch(page);
+        if (!res.ok) throw new Error("Không thể tải trang.");
+        const html = await res.text();
+        main.innerHTML = html;
+        window.history.pushState({}, "", `#${page}`);
+      } catch (err) {
+        main.innerHTML = "<p>Không thể tải nội dung. Vui lòng thử lại.</p>";
+      }
+    });
+  });
+
+  // Xử lý nút quay lại/lịch sử
+  window.addEventListener("popstate", () => {
+    const hashPage = window.location.hash.replace("#", "");
+    if (hashPage) {
+      fetch(`pages/${hashPage}`)
+        .then(res => res.text())
+        .then(html => main.innerHTML = html);
+    }
+  });
 });
 
