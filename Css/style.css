@@ -21,7 +21,8 @@ body {
   background-color: var(--main-color);
   padding: 10px 20px;
   flex-wrap: wrap;
-  height: 100px;
+  height: auto;
+  flex-direction: column;
 }
 
 .logo {
@@ -68,6 +69,31 @@ body {
 .user-section a:hover {
   color: #07ed50;
 }
+
+@media (max-width: 768px) {
+  .main-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .main-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    padding-left: 0;
+  }
+
+  .main-nav a {
+    font-size: 120%;  /* giảm kích thước chữ cho vừa màn hình */
+    padding: 10px 0;
+  }
+
+  .logo {
+    font-size: 28px;  /* nhỏ hơn để không vỡ layout */
+  }
+}
+
 /*Đây là Css cho nội dung chính của các thẻ div*/
 .container {
   background-color: var(--main-color);
